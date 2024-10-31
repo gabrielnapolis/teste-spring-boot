@@ -47,3 +47,5 @@
 Os teste dos endpoints da aplicação estão no caminho:
 
     api\src\test\java\br\com\process\api\Controller\ProcessControllerTest.java
+
+## Configuração de Banco de Dados
