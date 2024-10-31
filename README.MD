@@ -41,3 +41,9 @@
             "processNumber": "0001234-56.2024.8.26.0000",
             "defendantName": "João Teste"
         }
+
+## Testes
+
+Os teste dos endpoints da aplicação estão no caminho:
+
+    api\src\test\java\br\com\process\api\Controller\ProcessControllerTest.java
