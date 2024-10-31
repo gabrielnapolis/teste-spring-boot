@@ -9,7 +9,7 @@
 
 ### Endpoints:
 
-#### POST - Cadastro de Processo Judicial
+#### 1. POST - Cadastro de Processo Judicial
 
     Url: "http://localhost:8080/api/process"
 
@@ -18,3 +18,7 @@
             "processNumber": "0001234-56.2024.8.26.0000",
             "defant": "João Teste"
         }
+
+#### 2. GET - Listagem dos Processos
+
+    Url: "http://localhost:8080/api/process"
