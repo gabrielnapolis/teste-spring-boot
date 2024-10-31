@@ -2,6 +2,7 @@ package br.com.process.api.Controller;
 
 import java.util.List;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,14 +53,24 @@ public class ProcessController {
 
         ProcessModel process = processRepository.findByProcessNumber(processNumber);
         if (process == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Processo n° " + processNumber + " não encontrado.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Processo n° " + processNumber + " não encontrado.");
         }
         processRepository.delete(process);
         return ResponseEntity.status(HttpStatus.OK).body("Processo n° " + processNumber + " excluído com sucesso.");
     }
 
     @PutMapping("/process")
-    public ProcessModel edit(@RequestBody ProcessModel processDto) {
-        return processRepository.save(processDto);
+    public ResponseEntity<?> edit(@RequestBody ProcessModel processDto) {
+
+        Optional<ProcessModel> existingProcess = processRepository.findById(processDto.getId());
+
+        if (existingProcess.isPresent()) {
+            ProcessModel updatedProcess = processRepository.save(processDto);
+            return ResponseEntity.ok(updatedProcess);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Processo n° " + processDto.getProcessNumber() + " não encontrado.");
+        }
     }
 }
