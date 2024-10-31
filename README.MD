@@ -11,7 +11,7 @@
 
 #### 1. POST - Cadastro de Processo Judicial
 
-    Url: "http://localhost:8080/api/process"
+    Url: http://localhost:8080/api/process
 
     Exemplo de cadastro: 
         {
@@ -21,4 +21,4 @@
 
 #### 2. GET - Listagem dos Processos
 
-    Url: "http://localhost:8080/api/process"
+    Url: http://localhost:8080/api/process
