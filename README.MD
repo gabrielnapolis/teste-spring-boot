@@ -16,7 +16,7 @@
     Exemplo: 
         {
             "processNumber": "0001234-56.2024.8.26.0000",
-            "defant": "João Teste"
+            "defendant": "João Teste"
         }
 
 #### 2. GET - Listagem dos Processos
